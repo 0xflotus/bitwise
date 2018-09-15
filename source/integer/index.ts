@@ -1,7 +1,15 @@
-import getBit from './get-bit'
-import setBit from './set-bit'
-import toggleBit from './toggle-bit'
+import _getBit from './get-bit'
+import _setBit from './set-bit'
+import _toggleBit from './toggle-bit'
 
-export { getBit, setBit, toggleBit }
+export const getBit = _getBit
+export const setBit = _setBit
+export const toggleBit = _toggleBit
 
-export default { getBit, setBit, toggleBit }
+declare namespace bitwise.integer {
+	export const getBit: typeof _getBit
+	export const setBit: typeof _setBit
+	export const toggleBit: typeof _toggleBit
+}
+
+export default bitwise.integer

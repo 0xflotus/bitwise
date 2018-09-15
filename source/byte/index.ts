@@ -1,6 +1,12 @@
-import read from './read'
-import write from './write'
+import _read from './read'
+import _write from './write'
 
-export { read, write }
+export const read = _read
+export const write = _write
 
-export default { read, write }
+declare namespace bitwise.byte {
+	export const read: typeof _read
+	export const write: typeof _write
+}
+
+export default bitwise.byte

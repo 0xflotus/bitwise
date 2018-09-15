@@ -1,5 +1,9 @@
-import toBits from './to-bits'
+import _toBits from './to-bits'
 
-export { toBits }
+export const toBits = _toBits
 
-export default { toBits }
+declare namespace bitwise.string {
+	export const toBits: typeof _toBits
+}
+
+export default bitwise.string
